@@ -1,0 +1,83 @@
+.final_result {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.final_container {
+    background-color: var(--primary);
+    border: 2px solid var(--primary-alt);
+    color: var(--contrast);
+    border-radius: 8px;
+    padding: 2rem 3rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    min-width: 320px;
+    animation: fadeInUp 0.5s ease;
+}
+
+.final_btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    background: transparent;
+    border: none;
+    color: var(--contrast);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.final_btn:hover {
+    transform: scale(1.2);
+}
+
+.score {
+    display: block;
+    font-size: 2rem;
+    margin: 1rem 0;
+    font-weight: bold;
+    color: var(--contrast);
+}
+
+.final_icon {
+    display: block;
+    font-size: 3rem;
+    margin-top: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.final_icon:hover {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.final_text {
+    display: block;
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: var(--contrast);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.final_text:hover {
+    color: var(--primary-alt);
+}
+
+/* Optional animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
