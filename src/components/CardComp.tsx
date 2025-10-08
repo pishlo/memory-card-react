@@ -8,16 +8,17 @@ export type TCardProps = {
 
 const CardComp = ({ clickProp, card }: TCardProps) => {
 	const handleClick = () => {
-		console.log("clicked", card)
-		clickProp(card)
+		if (!card.flipped) clickProp(card)
 	}
 
 	return (
-		<article
-			onClick={handleClick}
-			className={`${styles.card} ${card.flipped ? styles.animate__rotate : ""}`}
-		>
-			<img src={`./imgs/${card.image}`} alt={card.image} />
+		<article onClick={handleClick} className={`${styles.card} ${card.flipped ? styles.flipped : ""}`}>
+			<div className={styles.cardInner}>
+				<div className={styles.cardFront}>
+					<img src={`./imgs/${card.image}`} alt={card.image} />
+				</div>
+				<div className={styles.cardBack}></div>
+			</div>
 		</article>
 	)
 }

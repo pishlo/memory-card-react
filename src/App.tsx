@@ -87,18 +87,18 @@ const App = () => {
 	
 
 
-  return (
-    <div className="main_section">
-      <h1>Memory Game</h1>
-	  <p>Number of moves: {moves}</p>
-      <div className="card_container">
-        {gameCards.map((card: TCard) => {
-            return <CardComp card={card} clickProp= {handleCardClick} key={card.id} />
-        })}
-      </div>
-	  <ModalComp showModal={showModal} toggleModal={setShowModal} handleRestart={handleRestart} moves={moves}/>
-    </div>
-  )
+	return (
+		<div className="main_section">
+		<h1>Memory Game</h1>
+		<p>Number of moves: {moves}</p>
+		<div className="card_container">
+			{gameCards.map((card: TCard) => {
+				return <CardComp card={card} clickProp= {handleCardClick} key={card.id} />
+			})}
+		</div>
+		<ModalComp showModal={showModal} toggleModal={setShowModal} handleRestart={handleRestart} moves={moves}/>
+		</div>
+	)
 }
 
 export default App

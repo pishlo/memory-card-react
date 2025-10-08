@@ -1,83 +1,85 @@
 .final_result {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(14, 26, 31, 0.85);
+    backdrop-filter: blur(6px);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
-    transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+  
+.final_result[style*="visible"] {
+    visibility: visible;
     opacity: 1;
 }
-
+  
 .final_container {
-    background-color: var(--primary);
-    border: 2px solid var(--primary-alt);
-    color: var(--contrast);
-    border-radius: 8px;
-    padding: 2rem 3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 3rem 4rem;
     text-align: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    min-width: 320px;
+    color: var(--text);
+    box-shadow: 0 12px 30px var(--shadow);
     animation: fadeInUp 0.5s ease;
+    min-width: 380px;
 }
-
+  
 .final_btn {
     position: absolute;
     top: 1.5rem;
     right: 2rem;
     background: transparent;
     border: none;
-    color: var(--contrast);
-    font-size: 1.5rem;
+    color: var(--text);
+    font-size: 1.8rem;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
-
+  
 .final_btn:hover {
+    color: var(--accent);
     transform: scale(1.2);
 }
-
+  
 .score {
     display: block;
-    font-size: 2rem;
-    margin: 1rem 0;
-    font-weight: bold;
-    color: var(--contrast);
+    font-size: 2.25rem;
+    margin: 1.25rem 0;
+    font-weight: 600;
+    color: var(--primary);
 }
-
+  
 .final_icon {
     display: block;
-    font-size: 3rem;
+    font-size: 4rem;
     margin-top: 1rem;
-    transition: transform 0.3s ease;
 }
-
-.final_icon:hover {
-    transform: rotate(10deg) scale(1.1);
-}
-
+  
 .final_text {
     display: block;
-    margin-top: 2rem;
-    font-size: 1rem;
-    color: var(--contrast);
+    margin-top: 2.25rem;
+    font-size: 1.1rem;
+    color: var(--text);
     cursor: pointer;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease;
 }
-
+  
 .final_text:hover {
-    color: var(--primary-alt);
+    color: var(--primary);
 }
-
-/* Optional animation */
+  
 @keyframes fadeInUp {
     from {
-        opacity: 0;
-        transform: translateY(40px);
+      opacity: 0;
+      transform: translateY(40px);
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
 }
+  
